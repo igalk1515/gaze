@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gaze Tracker</title>
+    <style>
+      video,
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: scaleX(-1);
+      }
+    </style>
+  </head>
+  <body>
+    <button
+      id="calibrate-button"
+      style="position: absolute; top: 10px; right: 10px; z-index: 10"
+    >
+      Start Calibration
+    </button>
+    <video id="video" autoplay playsinline width="640" height="480"></video>
+    <canvas id="output" width="640" height="480"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="calibration.js"></script>
+    <script src="gaze.js"></script>
+  </body>
+</html>
